@@ -46,21 +46,6 @@ alert = {
 
 # The script detects the IP and checks if it exists in the MISP_ip.txt list
 
-🧩 Helper Function: load_file_content()
-
-The script uses this function to quickly load IOC lists into memory:
-
-def load_file_content(filepath):
-    """Load file content into set for fast lookup."""
-    if not os.path.exists(filepath):
-        return set()
-    with open(filepath, 'r') as f:
-        return set(line.strip() for line in f if line.strip())
-
-Removes duplicates automatically
-Ignores blank lines
-Returns an empty set if the file doesn’t exist
-
 ⚠️ Notes
 
 Designed for local IOC list lookups, not online threat feeds.
